@@ -13,17 +13,16 @@ n=1;
 if sel==1
     for k=1:48 %% trials
         q=1;
-        if exist(['/home/jmm_vivobook_asus/DeepGaze_project/SincNet-Mirco/EEG_SincNet/filters_act/1730006_more_filters_200/frequency_ranges_' subject_code '_' num2str(k) '.txt'])
+        if exist(['filters_act/1730006_more_filters/frequency_ranges_' subject_code '_' num2str(k) '.txt'])
         for i=1:399 %% possible training epochs
-            if exist(['/home/jmm_vivobook_asus/DeepGaze_project/SincNet-Mirco/EEG_SincNet/filters_act/1730006_more_filters_200/filters_vals_' num2str(i) '_' subject_code '_' num2str(k) '_more_filters_n.txt'])
-                Mdata{k,q}=dlmread(['/home/jmm_vivobook_asus/DeepGaze_project/SincNet-Mirco/EEG_SincNet/filters_act/1730006_more_filters_200/filters_vals_' num2str(i) '_' subject_code '_' num2str(k) '_more_filters_n.txt'],',');
+            if exist(['filters_act/1730006_more_filters/filters_vals_' num2str(i) '_' subject_code '_' num2str(k) '_more_filters_n.txt'])
+                Mdata{k,q}=dlmread(['filters_act/1730006_more_filters/filters_vals_' num2str(i) '_' subject_code '_' num2str(k) '_more_filters_n.txt'],',');
                 temp_val=zeros([d_size 2000]);
                 for p=1:d_size
                     %temp_val(p,:)=freqz(Mdata{k,q}(p,:),1,1000);
                     %% sampling frequency is 500 Hz
                     temp_val(p,:)=fftshift((1/(500*1000)).*(abs(fft(Mdata{k,q}(p,:),2000)).^2));
                 end;
-                %data(k,q,:)=mean(temp_val,1);
                 data(k,q,:)=mean(temp_val(:,1001:2000),1);
                 q=q+1;
             end;
