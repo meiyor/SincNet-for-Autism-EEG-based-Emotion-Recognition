@@ -3,7 +3,6 @@ function [err_train,err_test,training_loss,test_loss,err_happy,err_sad,err_angry
 close all;
 file=fopen(path_file,'r');
 n=1;
-
 %% array initialization
 err_train_p=zeros([1,400]);
 err_test_p=zeros([1,400]);
