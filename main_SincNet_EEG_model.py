@@ -19,4 +19,4 @@ for root, dirnames, filenames in os.walk(str(sys.argv[1])):
                                         strp=strp[4].split('.')
                                         print(strp[0])
                                         ## please be sure your cfg file is added here to do the correct evaluation
-                                        subprocess.call('python -u main_EEG_av_new.py "%s" "%s" --cfg=cfg/SincNet_Config_vals.cfg | tee folder_output/res_time_"%s".txt '% (str2,strp[0],str_test), shell=True)
+                                        subprocess.call('python -u main_EEG_SincNet.py "%s" "%s" --cfg=cfg/SincNet_Config_vals.cfg | tee folder_output/res_time_"%s".txt '% (str2,strp[0],str_test), shell=True)
