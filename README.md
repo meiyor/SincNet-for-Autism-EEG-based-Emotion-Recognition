@@ -12,3 +12,5 @@ After you downloaded the data from the request you can install the package requi
 python main_SincNet_EEG_model.py "/folder/with_TD_or_ASD_ZCA_inputs/"
 ```
 Please be careful where you set up your data folder containing the 40, 48 or any amount of participant data you want to use in your experiment. This process can take a lot of execution time. For a P100 GPU the full simulation on the 88 participants took approximately four complete days. Running the process the results will be saved on temporary files with the name "res_evaluation_subjectID_trialnumber.csv" containing the loss and the accuracy average metrics, and files with the name "res_error_subjectID_trialnumber.csv" contains the binary representation of **hits** when the test trial label match with the prediction and a **miss** otherwise.
+
+The performance comparison between the human (participant) performance, a CNN baseline described [here](https://github.com/meiyor/Deep-Learning-Emotion-Decoding-using-EEG-data-from-Autism-individuals), and the SincNet-based system is plotted using barplot in the following Figure:
