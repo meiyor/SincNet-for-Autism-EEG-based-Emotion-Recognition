@@ -379,7 +379,7 @@ for epoch in range(N_epochs):
      print("epoch %i, loss_tr=%f err_tr=%f loss_te=%f err_te=%f err_te_snt=%f" % (epoch, loss_tot,err_tot,loss_tot_dev,err_tot_dev,err_tot_dev_snt))
      print("train-epoch %i, error_happy: %f, error_sad: %f, error_angry: %f, error_fear: %f" % (epoch,err_toth,err_tots,err_tota,err_totf))
 
-     with open(output_folder+"/res_evaluation_file.res", "a") as res_file:
+     with open(output_folder+"/res_evaluation_"+strn1[7]+'_'+sys.argv[2]+".csv", "a") as res_file:
         res_file.write("epoch %i, loss_tr=%f err_tr=%f loss_te=%f err_te=%f err_te_snt=%f\n" % (epoch, loss_tot,err_tot,loss_tot_dev,err_tot_dev,err_tot_dev_snt))
 
      checkpoint={'CNN_model_par': CNN_net.state_dict(),
