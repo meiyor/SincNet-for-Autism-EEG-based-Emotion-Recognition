@@ -8,3 +8,5 @@ The proposed SincNet-based architecture for EEG-based emotion recognition is des
 This system is composed of a SincConv layer, three standard conv-pool blocks such as Conv1, Conv2, and Conv3, and a fully-connected DNN1 coupled and connected to a softmax classifier. The three 2D convolutional blocks are based on 32, 64, and 128 channels with kernel sizes of (100 x 10), (20 x 5), (5 x 2), respectively. Max-pooling used kernel sizes of (10 x 5), (5 x 2), (2 x 2). All the DNN units were ReLUs.
 
 After you downloaded the data from the request you can install the package requirements on the  [SincNet](https://github.com/mravanelli/SincNet) and run the leave-one-trial-out (LOTO) cross-validation using the following command: 
+```python
+python main_SincNet_EEG_model.py "/folder/with_TD_or_ASD_ZCA_inputs/"
