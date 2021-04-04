@@ -16,6 +16,6 @@ Please be careful where you set up your data folder containing the 40, 48 or any
 The performance comparison between the human (participant) performance, a CNN baseline described [here](https://github.com/meiyor/Deep-Learning-Emotion-Decoding-using-EEG-data-from-Autism-individuals), and the SincNet-based system is plotted using barplot in the following Figure:
 <img src="https://github.com/meiyor/SincNet-for-Autism-EEG-based-Emotion-Recognition/blob/main/comp_sinc_paper_EMBC.jpg" width="700" height="330">
 
-An important feature of our proposed SincNet-based system is to learn the frequency responses from TD and ASD participants using a by-design interpretability resource. This consists in an application of a Fast-Fourier-Transform on each filters' impulse-response learned from the SincConv layer. The following gif loop shows the Power-Spectral-Density (PSD) for TD (blue) and ASD (red) individuals
+An important feature of our proposed SincNet-based system is to learn the frequency responses from TD and ASD participants using a by-design interpretability resource. This consists in an application of a Fast-Fourier-Transform on each filters' impulse-response learned from the SincConv layer. The following .gif loop shows the Power-Spectral-Density (PSD) for TD (blue) and ASD (red) individuals across all the 400 training loops we used on this experiment.
 <img src="https://github.com/meiyor/SincNet-for-Autism-EEG-based-Emotion-Recognition/blob/main/output_more_summary_TD_ASD.gif" width="600" height="310">
 
