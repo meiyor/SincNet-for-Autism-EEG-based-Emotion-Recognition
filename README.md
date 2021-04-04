@@ -17,5 +17,5 @@ The performance comparison between the human (participant) performance, a CNN ba
 <img src="https://github.com/meiyor/SincNet-for-Autism-EEG-based-Emotion-Recognition/blob/main/comp_sinc_paper_EMBC.jpg" width="700" height="330">
 
 An important feature of our proposed SincNet-based system is to learn the frequency responses from TD and ASD participants using a by-design interpretability resource. This consists in an application of a Fast-Fourier-Transform on each filters' impulse-response learned from the SincConv layer. The following gif loop shows the Power-Spectral-Density (PSD) for TD (blue) and ASD (red) individuals
-<img src="https://github.com/meiyor/SincNet-for-Autism-EEG-based-Emotion-Recognition/blob/main/output_more_summary_TD_ASD.gif" width="700" height="330">
+<img src="https://github.com/meiyor/SincNet-for-Autism-EEG-based-Emotion-Recognition/blob/main/output_more_summary_TD_ASD.gif" width="600" height="310">
 
