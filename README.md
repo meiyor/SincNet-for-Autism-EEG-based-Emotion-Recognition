@@ -22,3 +22,4 @@ An important feature of our proposed SincNet-based system is to learn the freque
 
 <img src="https://github.com/meiyor/SincNet-for-Autism-EEG-based-Emotion-Recognition/blob/main/output_more_summary_TD_ASD.gif" width="600" height="310">
 
+After 400 training iterations we obtained significant differences on high-α (9-13 Hz) **F(1,87)=3.331,p=0.000267** and β (13-30 Hz) **F(1,87)=2.05,p=0.00102** bands after Bonferroni-Holm correction.
