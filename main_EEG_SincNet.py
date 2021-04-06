@@ -222,7 +222,8 @@ if pt_file != 'none':
     DNN1_net.load_state_dict(checkpoint_load['DNN1_model_par'])
     DNN2_net.load_state_dict(checkpoint_load['DNN2_model_par'])
 
-# using a learning rate ten times greater for the SincConv and the ConvPool stage in comparison wit the rest of the architecture
+## using a learning rate ten times greater for the SincConv and the ConvPool 
+## stage in comparison wit the rest of the architecture
 optimizer_CNN = optim.Adam(
     CNN_net.parameters(), lr=lr*10, alpha=0.95, eps=1e-8)
 optimizer_DNN1 = optim.Adam(DNN1_net.parameters(), lr=lr, alpha=0.95, eps=1e-8)
@@ -315,7 +316,8 @@ for epoch in range(N_epochs):
             for p in range(1):
 
                 test_data_file = genfromtxt(
-                    data_folder+'/'+strn1[7]+'/test_data_sub_'+strn1[7]+'_'+sys.argv[2]+'.csv', delimiter=',', skip_header=0)
+                    data_folder+'/'+strn1[7]+'/test_data_sub_'+strn1[7]+'_'+sys.argv[2]+'.csv', 
+                                                                delimiter=',', skip_header=0)
                 num_cols_t = test_data_file.shape[0]  # Number of data samples
                 num_rows_t = 1  # Length of Data Vector
                 total_size_test = (num_cols_t-1)*num_rows_t
