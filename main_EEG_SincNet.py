@@ -26,7 +26,8 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = '0,1'
 
 
-# size vector_numbacthes created from the data defined on the config file, 22561=752*30
+# size vector_numbacthes created from the data defined 
+## on the config file, 22561=752*30
 sig_data_save = np.zeros([47, 22561])
 
 
@@ -52,7 +53,8 @@ def create_batches_rnd(batch_size, data_folder, wlen, fact_amp, i_test_index, ep
         if not(i == i_test_index):
             if epoch_t == 0:
                 training_data_file = genfromtxt(
-                    data_folder+'/'+strn1[7]+'/test_data_sub_'+strn1[7]+'_'+str(i+1)+'.csv', delimiter=',', skip_header=0)
+                    data_folder+'/'+strn1[7]+'/test_data_sub_'+strn1[7]+'_'+str(i+1)+'.csv', 
+                                                                        delimiter=',', skip_header=0)
                 sig_data_save[n, :] = training_data_file
             else:
                 training_data_file = sig_data_save[n, :]
@@ -161,7 +163,8 @@ except output_folder.DoesNotExist:
 # loss function
 cost = nn.NLLLoss()
 
-# Converting context and shift in samples play with this values in milliseconds (ms) taking into account the length of the grand-average ERP representation
+## Converting context and shift in samples play with this values in milliseconds (ms) 
+## taking into account the length of the grand-average ERP representation
 wlen = int(fs*cw_len/1000.00)
 wshift = int(fs*cw_shift/1000.00)
 
