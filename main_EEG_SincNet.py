@@ -290,15 +290,15 @@ for epoch in range(N_epochs):
         err_asum = err_asum+err_angry
         err_fsum = err_fsum+err_fear
         print(CNN_net.conv[0].hz, np.shape(CNN_net.conv[0].hz), CNN_net.conv[0].filters, np.shape(
-            CNN_net.conv[0].filters), CNN_net.act[0], np.shape(CNN_net.act[0]), 'hola')
+            CNN_net.conv[0].filters), CNN_net.act[0], np.shape(CNN_net.act[0]))
     loss_tot = loss_sum/N_batches
     err_tot = err_sum/N_batches
     err_toth = err_hsum/N_batches
     err_tots = err_ssum/N_batches
     err_tota = err_asum/N_batches
     err_totf = err_fsum/N_batches
-    print("training epoch #: %i , error_tot: %f, error_happy: %f, error_sad: %f, error_angry: %f, error_fear: %f" % (
-        epoch, err_tot, err_toth, err_tots, err_tota, err_totf))
+    print("training epoch #: %i , error_tot: %f, error_happy: %f, error_sad: %f, 
+          error_angry: %f, error_fear: %f" % (epoch, err_tot, err_toth, err_tots, err_tota, err_totf))
 
 # Full Validation  new
     print("Validation..")
