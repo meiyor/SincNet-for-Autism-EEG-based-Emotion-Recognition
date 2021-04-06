@@ -91,7 +91,9 @@ def str_to_bool(s):
 
 def create_batches_rnd(batch_size, data_folder, wav_lst, N_snt, wlen, lab_dict, fact_amp):
 
-    # Initialization of the minibatch (batch_size,[0=>x_t,1=>x_t+N,1=>random_samp])
+    # Initialization of the minibatch 
+    ## (batch_size,[0=>x_t,1=>x_t+N,1=>random_samp])
+    
     sig_batch = np.zeros([batch_size, wlen])
     lab_batch = np.zeros(batch_size)
 
