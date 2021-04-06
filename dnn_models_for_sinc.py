@@ -11,7 +11,8 @@ def flip(x, dim):
     dim = x.dim() + dim if dim < 0 else dim
     x = x.contiguous()
     x = x.view(-1, *xsize[dim:])
-    x = x.view(x.size(0), x.size(1), -1)[:, getattr(torch.arange(x.size(1)-1, -1, -1), ('cpu', 'cuda')[x.is_cuda])().long(), :]
+    x = x.view(x.size(0), x.size(1), -1)[:, getattr(torch.arange(x.size(1)-1, -1, -1), 
+                                                  ('cpu', 'cuda')[x.is_cuda])().long(), :]
     return x.view(xsize)
 
 
@@ -63,7 +64,7 @@ class SincConv_fast(nn.Module):
             # msg = (f'SincConv only support one input channel '
             #       f'(here, in_channels = {in_channels:d}).')
             msg = "SincConv only support one input channel (here, in_channels = {%i})" % (
-                in_channels)
+                  in_channels)
             raise ValueError(msg)
 
         self.out_channels = out_channels
@@ -86,7 +87,8 @@ class SincConv_fast(nn.Module):
         self.min_low_hz = min_low_hz
         self.min_band_hz = min_band_hz
 
-        # initialize filterbanks such that they are equally spaced in Mel scale around the complete range of the pre-filtered EEG trial
+        # initialize filterbanks such that they are equally spaced in 
+        # Mel scale around the complete range of the pre-filtered EEG trial
         low_hz = 0.1
         high_hz = 30
 
@@ -138,7 +140,8 @@ class SincConv_fast(nn.Module):
         f_times_t_low = torch.matmul(low, self.n_)
         f_times_t_high = torch.matmul(high, self.n_)
 
-        # Equivalent of Eq.4 of the reference paper (SPEAKER RECOGNITION FROM RAW WAVEFORM WITH SINCNET). I just have expanded the sinc and simplified the terms. This way I avoid several useless computations.
+        # Equivalent of Eq.4 of the reference paper (SPEAKER RECOGNITION FROM RAW WAVEFORM WITH SINCNET). 
+        # I just have expanded the sinc and simplified the terms. This way I avoid several useless computations (Mirco).
         band_pass_left = ((torch.sin(f_times_t_high) -
                            torch.sin(f_times_t_low))/(self.n_/2))*self.window_
         band_pass_center = 2*band.view(-1, 1)
