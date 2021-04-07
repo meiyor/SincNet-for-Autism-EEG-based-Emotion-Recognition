@@ -161,7 +161,17 @@ class SincConv_fast(nn.Module):
 
 
 class sinc_conv(nn.Module):
-
+    """Sinc-based convolution
+    Parameters for SincConv layer 
+        Number of input channels. Must be 1.
+    N_filt : `int`
+        Number of filters.
+    Filt_dim : `int`
+        Filter dimensions or the number of points to describe each impulse response
+    fs : `int
+        Sample rate. Defaults to 500.
+    For usage check the torch.Conv2d class    
+    """
     def __init__(self, N_filt, Filt_dim, fs):
         super(sinc_conv, self).__init__()
 
@@ -225,7 +235,11 @@ class sinc_conv(nn.Module):
 
 
 def act_fun(act_type):
-
+    """activation function selection function
+    Parameters for any type of Conv/DNN layer
+    act_type: str
+         activation function name, and correlate this with all the possible activation functions in Pytorch
+    """
     if act_type == "relu":
         return nn.ReLU()
 
