@@ -2,7 +2,8 @@ import os
 import sys
 import subprocess
 """
-main function for running the outter loop of the Leave-One-Trial-Out (LOTO) cross-validation. Please add the full path of the ZCA/EEG images in sys.argv[1]
+main function for running the outter loop of the Leave-One-Trial-Out (LOTO) cross-validation. 
+Please add the full path of the ZCA/EEG images in sys.argv[1]
 """
 for root, dirnames, filenames in os.walk(str(sys.argv[1])):
     # these for loops define the leave-one-trial-out (LOTO) cross-validation for TD or ASD folders
