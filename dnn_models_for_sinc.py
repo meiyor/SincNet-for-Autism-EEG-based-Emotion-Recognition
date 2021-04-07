@@ -281,6 +281,9 @@ class LayerNorm(nn.Module):
 
 
 class MLP(nn.Module):
+    """
+    MLP/DNN layer constructor [dnn/fc] option values from the cfg file are parsed here
+    """
     def __init__(self, options):
         super(MLP, self).__init__()
 
@@ -377,7 +380,9 @@ class MLP(nn.Module):
 
 
 class SincNet(nn.Module):
-
+    """
+    full SincNet constructor all option-values from the cfg file are parsed here
+    """
     def __init__(self, options):
         super(SincNet, self).__init__()
 
