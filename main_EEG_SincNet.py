@@ -31,9 +31,69 @@ os.environ["CUDA_VISIBLE_DEVICES"] = '0,1'
 sig_data_save = np.zeros([47, 22561])
 
 
-def create_batches_rnd(batch_size, data_folder, wlen, fact_amp, i_test_index, epoch_t):
+def create_batches_rnd(batch_size=47, data_folder, wlen, fact_amp, i_test_index, epoch_t):
+    """ The create_batches_rnd function uses the parameters from the main function
+        to return a tensor/array with a size of (number_of_batches,length_EEG_trial).
+        This function is designed for work with ZCA images provided from the EEG data
+        collected by the Social Competence and Treatment Lab (SCTL) at StonyBrook University,
+        NY, USA. Please provide the inclusion of the genfromtext package from numpy to read 
+        the corresponding csv files.
+    Arguments
+    ---------
+    batch_size : int
+        This is the number of random batches were used to train the SincNet pipeline (deafult 47).
+        Always set a number of batches between 1 and 47 if you want evaluate how the performance 
+        varies in terms of the number of batches.
+    data_folder : str
+       data folder preffix where the ZCA/EEG images are located. Please provide this data accordingly
+       from the main function
+    annotation_train : str
+        Path of the annotation file which is used to learn the tokenizer. It
+        can be in JSON or csv format.
+    annotation_read : str
+        The data entry which contains the word sequence in the annotation file.
+    model_type : str
+        (bpe, char, unigram).
+        If "bpe", train unsupervised tokenization of piece of words. see:
+        https://www.aclweb.org/anthology/P16-1162/
+        If "word" take the vocabulary from the input text.
+        If "unigram" do piece of word tokenization using unigram language
+        model, see: https://arxiv.org/abs/1804.10959
+    char_format_input : bool
+        Whether the read entry contains characters format input.
+        (default: False)
+        (e.g., a p p l e _ i s _ g o o d)
+    character_coverage : int
+        Amount of characters covered by the model, good defaults
+        are: 0.9995 for languages with a rich character set like Japanse or
+        Chinese and 1.0 for other languages with small character set.
+        (default: 1.0)
+    user_defined_symbols : string
+        String contained a list of symbols separated by a comma.
+        User-defined symbols are handled as one piece in any context.
+        (default: None)
+    max_sentencepiece_length : int
+        Maximum number of characters for the tokens. (default: 10)
+    bos_id : int
+        If -1 the bos_id = unk_id = 0. otherwise, bos_id = int. (default: -1)
+    eos_id : int
+        If -1 the bos_id = unk_id = 0. otherwise, bos_id = int. (default: -1)
+    split_by_whitespace : bool
+        If False, allow the sentenciepiece to extract piece crossing multiple
+        words. This feature is important for : Chinese/Japenese/Korean.
+        (default: True)
+    num_sequences : int
+        If not none, use at most this many sequences to train the tokenizer
+        (for large datasets). (default: None)
+    annotation_list_to_check : list,
+        List of the annotation file which is used for checking the accuracy of
+        recovering words from the tokenizer.
+    annotation_format : str
+        The format of the annotation file. JSON or csv are the formats supported.
+    """    
     # Initialization of the minibatch (batch_size,[0=>x_t,1=>x_t+N,1=>random_samp])
-    # batch_size will be the 48 different iteration per subject for the EEG case
+    # batch_size will be the 48 different iteration per subject for the EEG. This is depending on Leave-One-Trial_out (LOTO) cross-validation
+    
     data_batch = np.zeros([batch_size, wlen])
     lab_batch = np.zeros(batch_size)
 
