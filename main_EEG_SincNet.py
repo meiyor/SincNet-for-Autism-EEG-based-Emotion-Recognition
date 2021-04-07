@@ -47,49 +47,20 @@ def create_batches_rnd(batch_size=47, data_folder, wlen, fact_amp, i_test_index,
     data_folder : str
        data folder preffix where the ZCA/EEG images are located. Please provide this data accordingly
        from the main function
-    annotation_train : str
-        Path of the annotation file which is used to learn the tokenizer. It
-        can be in JSON or csv format.
-    annotation_read : str
-        The data entry which contains the word sequence in the annotation file.
-    model_type : str
-        (bpe, char, unigram).
-        If "bpe", train unsupervised tokenization of piece of words. see:
-        https://www.aclweb.org/anthology/P16-1162/
-        If "word" take the vocabulary from the input text.
-        If "unigram" do piece of word tokenization using unigram language
-        model, see: https://arxiv.org/abs/1804.10959
-    char_format_input : bool
-        Whether the read entry contains characters format input.
-        (default: False)
-        (e.g., a p p l e _ i s _ g o o d)
-    character_coverage : int
-        Amount of characters covered by the model, good defaults
-        are: 0.9995 for languages with a rich character set like Japanse or
-        Chinese and 1.0 for other languages with small character set.
-        (default: 1.0)
-    user_defined_symbols : string
-        String contained a list of symbols separated by a comma.
-        User-defined symbols are handled as one piece in any context.
-        (default: None)
-    max_sentencepiece_length : int
-        Maximum number of characters for the tokens. (default: 10)
-    bos_id : int
-        If -1 the bos_id = unk_id = 0. otherwise, bos_id = int. (default: -1)
-    eos_id : int
-        If -1 the bos_id = unk_id = 0. otherwise, bos_id = int. (default: -1)
-    split_by_whitespace : bool
-        If False, allow the sentenciepiece to extract piece crossing multiple
-        words. This feature is important for : Chinese/Japenese/Korean.
-        (default: True)
-    num_sequences : int
-        If not none, use at most this many sequences to train the tokenizer
-        (for large datasets). (default: None)
-    annotation_list_to_check : list,
-        List of the annotation file which is used for checking the accuracy of
-        recovering words from the tokenizer.
-    annotation_format : str
-        The format of the annotation file. JSON or csv are the formats supported.
+    wlen : int
+        This is the sample length (or the number of samples) of the random trial will be cropped 
+        randomly on each crop iteration.To use them from the main function transform the miliseconds 
+        (ms) values from the cfg in this way: int(fs*cw_len/1000.00)
+    fact_amp : float 
+            a random number between 0 and 1 to weight the amplitude of the random crop used for
+           train the SincNet pipeline
+    i_test_index: int
+            This value represents the trial index evaluated in the current training process. If the file 
+            assigned on the test trial has a index n then the index parsed here will be n.
+    epoch_t: int 
+            This is training epoch index for the  i_test_index trainign iteration. You can modify this
+            values depending on the amount of trials per participant you have on your ZCA/EEG data images
+           
     """    
     # Initialization of the minibatch (batch_size,[0=>x_t,1=>x_t+N,1=>random_samp])
     # batch_size will be the 48 different iteration per subject for the EEG. This is depending on Leave-One-Trial_out (LOTO) cross-validation
@@ -143,7 +114,7 @@ def create_batches_rnd(batch_size=47, data_folder, wlen, fact_amp, i_test_index,
             train_len = sig_train.shape[1]
             train_seg = np.random.randint(train_len-wlen-1)
             train_end = train_seg+wlen
-            data_batch[n, :] = sig_train[n, train_seg:train_end]
+            data_batch[n, :] = fact_amp*sig_train[n, train_seg:train_end]
             lab_batch[n] = label_train[n]
 
             n = n+1
