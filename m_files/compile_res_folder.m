@@ -1,4 +1,5 @@
 function [test_err_sal,performance,err_av_sal,loss_av_sal,err_av,err_happy,err_sad,err_angry,err_fear,Cn]=compile_res_folder(path)
+%%% define the path of your results before running this function
 Adir=dir(path);
 pdfolder_d=strsplit(path,'/');
 pdfolder=strsplit(pdfolder_d{end},'\');
@@ -32,17 +33,7 @@ for p=1:48 %% running along trials
             end;
             if ss(2)~=202
                 data_res{p}=data_res{p}(:,round(linspace(1,ss(2),202)));
-            end;
-%                 if ss(1)>=370
-%                     data_res{p}=data_res{p}(1:200,1:200);
-%                 else
-%                     if ss(1) == 200
-%                         data_res{p}=data_res{p}(1:200,1:200);  
-%                     else    
-%                         data_res{p}=data_res{p-1};
-%                     end;
-%                 end;
-%            end;
+            end;;
             q=q+1;
         else
             index_n(q)=p;
