@@ -1,5 +1,6 @@
 function C=process_conf_matrix(indicator,err_h,err_s,err_a,err_f)
-## contruct the confusion matrix and its metric given the LOTO errors
+%%%contruct the confusion matrix and its metric given the LOTO errors
+%%% before run this compile the error vector per emotion in err_h, err_s, err_a, and err_f
 C=zeros(4,4);
 err=[mean(mean(err_h)),mean(mean(err_s)),mean(mean(err_a)),mean(mean(err_f))];
 for k=1:length(indicator)
