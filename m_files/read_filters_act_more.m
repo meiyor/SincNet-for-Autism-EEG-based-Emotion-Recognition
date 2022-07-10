@@ -1,5 +1,5 @@
 function read_filters_act_more(subject_code,d_size,sel)
-%% run read_filters_act_more('1730006',100,1) change second parameter depending on the size of your SincLayer
+%% run for instance for subject 1730006 read_filters_act_more('1730006',100,1) change second parameter depending on the size of your SincLayer
 %% setting up the arrays for data saving
 data=zeros([48,399,1000]);
 Mdata={};
