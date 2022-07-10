@@ -25,4 +25,3 @@ for k=1:length(indicator)
         end;
     end;
 end;
-A=1;
