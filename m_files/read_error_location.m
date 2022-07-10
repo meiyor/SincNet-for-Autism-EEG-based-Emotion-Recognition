@@ -14,4 +14,4 @@ while(feof(file)~=1)
     q=q+1;
 end;
 data_res=1-data_res;
-fclose(file); 
+fclose(file);
