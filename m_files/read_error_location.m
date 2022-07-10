@@ -15,4 +15,3 @@ while(feof(file)~=1)
 end;
 data_res=1-data_res;
 fclose(file); 
-A=1;
