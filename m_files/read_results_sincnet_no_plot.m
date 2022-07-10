@@ -1,5 +1,6 @@
 function [err_train,err_test,training_loss,test_loss,err_happy,err_sad,err_angry,err_fear,test_error]=read_results_sincnet_no_plot(path_file,path_extra)
-
+%% path_file: path directory for the initial number of subjects in ISPY - results
+%% path_extra: path directory for the extra subjects in ISPY - results
 close all;
 file=fopen(path_file,'r');
 n=1;
