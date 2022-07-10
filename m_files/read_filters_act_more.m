@@ -47,6 +47,7 @@ if sel==1
         k
     end;
 else
+    %% load a template if necessary ask permission to Juan Manuel Mayor-Torres for having access to this file
     load('test_val_filters_1000_ASD_fft_short.mat')
 end;
 %% reading filter SincNet activation response
