@@ -92,4 +92,3 @@ err_angry=err_angry./n(3);
 err_fear=err_angry./n(4);
 err_av=err_av./(k-1);
 Cn=process_conf_matrix(1-performance,err_happy,err_sad,err_angry,err_fear);
-A=1;
