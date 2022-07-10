@@ -29,11 +29,10 @@ for p=1:48 %% running along trials
                 else
                     data_res{p}=data_res{p}(1:400,:);
                 end;
-                A=1;
             end;
             if ss(2)~=202
                 data_res{p}=data_res{p}(:,round(linspace(1,ss(2),202)));
-            end;;
+            end;
             q=q+1;
         else
             index_n(q)=p;
