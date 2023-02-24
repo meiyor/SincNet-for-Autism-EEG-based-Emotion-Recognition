@@ -14,8 +14,8 @@ for root, dirnames, filenames in os.walk(str(sys.argv[1])):
             print(''.join([str(sys.argv[1]), '/', name, '/', files]))
             if os.path.isfile(''.join([str(sys.argv[1]), '/', name, '/', files])):
                 # before run each subjects run counter_divide_loto.sh and creates all the temporary training and test files,
-                # ALL THE TEMPORARY FILES SHOULD BE CREATED A PRIORI
-                # define the result folder per subject ONLY USE THIS TO TES$
+                # ALL THE TEMPORARY FILES SHOULD BE CREATED A PRIORI #
+                # define the result folder per subject ONLY USE THIS TO TEST #
                 if "train" in files and os.path.isdir(''.join([str(sys.argv[1]), '/', name, '/Results_Vals'])) == 0:
                     str1 = ''.join([str(sys.argv[1]), '/', name, '/', files])
                     str_test = "test"+files[5:]
