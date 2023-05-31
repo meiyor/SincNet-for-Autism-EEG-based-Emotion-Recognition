@@ -14,9 +14,9 @@ After you downloaded the data from the request you can install the package requi
 ```python
 python main_SincNet_EEG_model.py "/folder/with_TD_or_ASD_ZCA_inputs/"
 ```
-Please be careful where you set up your data folder containing the 40, 48 or any amount of participant data you want to use in your experiment. This process can take a lot of execution time and memory. For a P100 GPU the full simulation on the 88 participants took approximately four complete days. Running the process the results will be saved on temporary files with the name "res_evaluation_subjectID_trialnumber.csv" containing the loss and the accuracy average metrics, and files with the name "res_error_subjectID_trialnumber.csv" contains the binary representation of **hits** when the test trial label match with the prediction and a **miss** otherwise.
+Please be careful where you set up your data folder containing the 40, 48 or any amount of participant data you want to use in your experiment. This process can take a lot of execution time and memory. For a P100 GPU the full simulation on the 88 participants took approximately four complete days. Running the process the results will be saved on temporary files with the name "res_evaluation_subjectID_trialnumber.csv" containing the loss and the accuracy average metrics, and files with the name "res_error_subjectID_trialnumber.csv" contains the binary representation of **hits** when the test trial label matches with the prediction and a **miss** otherwise.
 
-The performance comparison between the human (participant) performance, a CNN baseline described [here](https://github.com/meiyor/Deep-Learning-Emotion-Decoding-using-EEG-data-from-Autism-individuals), and the SincNet-based system is plotted using barplot in the following Figure:
+The performance comparison between the human (participant) performance, a CNN baseline described [here](https://github.com/meiyor/Deep-Learning-Emotion-Decoding-using-EEG-data-from-Autism-individuals), and the SincNet-based system is plotted using a barplot in the following Figure:
 
 <img src="https://github.com/meiyor/SincNet-for-Autism-EEG-based-Emotion-Recognition/blob/main/comp_sinc_paper_EMBC.jpg" width="700" height="330">
 
@@ -26,4 +26,4 @@ An important feature of our proposed SincNet-based system is to learn the freque
 
 After 400 training iterations we obtained significant differences on high-α (9-13 Hz) **F(1,87)=3.331,p=0.000267** and β (13-30 Hz) **F(1,87)=2.05,p=0.00102** bands after Bonferroni-Holm correction. This significant difference are consistent with previous EEG studies which includes data from individuals with ASD [Pineda et., al 2012](https://www.sciencedirect.com/science/article/pii/S0306987712004082?casa_token=jF6BBvZsuFgAAAAA:cZuNKDgpQg1lv5Y2vmoKyONX2ifYx9-48EmbIXOZ1YT_OTGgsI0iWq130jQ6A9w8JMZP-RYOhQ) and [Friederich et., al 2015](https://link.springer.com/article/10.1007/s10803-015-2523-5).
 
-To process all the results for filter activation, metrics and results wrapping use all the code released on the [m_files](https://github.com/meiyor/SincNet-for-Autism-EEG-based-Emotion-Recognition/tree/main/m_files) directory. 
+To process all the results for filter activation, metrics and results wrapping use all the code released in the [m_files](https://github.com/meiyor/SincNet-for-Autism-EEG-based-Emotion-Recognition/tree/main/m_files) directory. 
