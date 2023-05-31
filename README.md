@@ -7,7 +7,7 @@ If you want to use this pipeline and/or request the dataset associated to this r
 The proposed SincNet-based architecture for EEG-based emotion recognition is described on the following Figure:
 <img src="https://github.com/meiyor/SincNet-for-Autism-EEG-based-Emotion-Recognition/blob/main/pipeline_sincnet_alone.jpg" width="900" height="310">
 
-This system is composed of a SincConv layer, three standard conv-pool blocks such as Conv1, Conv2, and Conv3, and a fully-connected DNN1 coupled and connected to a softmax classifier. The three 2D convolutional blocks are composed of 32, 64, and 128 channels with kernel sizes of (100 x 10), (20 x 5), (5 x 2), respectively. Max-pooling used kernel sizes of (10 x 5), (5 x 2), (2 x 2). All the DNN units were ReLUs.
+This system is composed of a SincConv layer, three standard conv-pool blocks such as Conv1, Conv2, and Conv3, and a fully-connected DNN1 coupled and connected to a softmax classifier. The three 2D convolutional blocks are composed of 32, 64, and 128 channels with kernel sizes of (100 x 10), (20 x 5), (5 x 2), respectively. Max-pooling used kernel sizes of (10 x 5), (5 x 2), (2 x 2) are also included in the pipeline. All the DNN units were ReLUs.
 
 After you downloaded the data from the request you can install the package requirements on the  [SincNet repository](https://github.com/mravanelli/SincNet) and run the leave-one-trial-out (LOTO) cross-validation using the following command: 
 
