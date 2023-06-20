@@ -22,6 +22,11 @@ The performance comparison between the human (participant) performance, a CNN ba
 
 An important feature of our proposed SincNet-based system is to learn the frequency responses from TD and ASD participants using a by-design interpretability resource. This consists in an application of a Fast-Fourier-Transform on each filters' impulse-response learned from the SincConv layer. The following .gif loop shows the Power-Spectral-Density (PSD) for TD (blue) and ASD (red) individuals across all the 400 training loops we used on this experiment. This information is learned in unsupervised (implied) way without adding any diagnosis label.
 
+To evaluate the SincLayer filter weights after training, we attached them for each 400 iteration (training loops) and for each trial per participant 1-48. You can calculate the PSD from the **read_filters_act_more.m** code. These SincLayer's weights and its corresponding files are located in the following two Google Drive links.
+
+ - [**https://drive.google.com/file/d/1oRFI0lGdqxDOMsLhNyO8bLSfVB8-U4E-/view?usp=sharing**](https://drive.google.com/file/d/1oRFI0lGdqxDOMsLhNyO8bLSfVB8-U4E-/view?usp=sharing)
+ - [**https://drive.google.com/file/d/1Xn1xJuYDOJnlh5YrB8jSt05p9wsVfrAi/view?usp=sharing**](https://drive.google.com/file/d/1Xn1xJuYDOJnlh5YrB8jSt05p9wsVfrAi/view?usp=sharing)
+
 <img src="https://github.com/meiyor/SincNet-for-Autism-EEG-based-Emotion-Recognition/blob/main/output_more_summary_TD_ASD.gif" width="600" height="310">
 
 After 400 training iterations we obtained significant differences on high-α (9-13 Hz) **F(1,87)=3.331,p=0.000267** and β (13-30 Hz) **F(1,87)=2.05,p=0.00102** bands after Bonferroni-Holm correction. This significant difference are consistent with previous EEG studies which includes data from individuals with ASD [Pineda et., al 2012](https://www.sciencedirect.com/science/article/pii/S0306987712004082?casa_token=jF6BBvZsuFgAAAAA:cZuNKDgpQg1lv5Y2vmoKyONX2ifYx9-48EmbIXOZ1YT_OTGgsI0iWq130jQ6A9w8JMZP-RYOhQ) and [Friederich et., al 2015](https://link.springer.com/article/10.1007/s10803-015-2523-5).
