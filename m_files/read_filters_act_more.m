@@ -14,7 +14,7 @@ if sel==1
     for k=1:48 %% trials
         q=1;
         if exist(['filters_act/1730006_filters_act/frequency_ranges_' subject_code '_' num2str(k) '.txt'])
-        for i=1:399 %% possible training epochs
+        for i=1:399 %% possible training epochs %% adjust this depending on the size of the filter
             %%ask permission for the filter_vals_folder to Juan Manuel Mayor-Torres
             if exist(['filters_act/1730006_filters_act/filters_vals_' num2str(i) '_' subject_code '_' num2str(k) '_more_filters_n.txt'])
                 Mdata{k,q}=dlmread(['filters_act/1730006_filters_act/filters_vals_' num2str(i) '_' subject_code '_' num2str(k) '_more_filters.txt'],',');
