@@ -22,7 +22,7 @@ The performance comparison between the human (participant) performance, a CNN ba
 
 An important feature of our proposed SincNet-based system is to learn the frequency responses from TD and ASD participants using a by-design interpretability resource. This consists in an application of a Fast-Fourier-Transform on each filters' impulse-response learned from the SincConv layer. The following .gif loop shows the Power-Spectral-Density (PSD) for TD (blue) and ASD (red) individuals across all the 400 training loops we used on this experiment. This information is learned in unsupervised (implied) way without adding any diagnosis label.
 
-To evaluate the SincLayer filter weights after training, we attached them for each 400 iteration (training loops) and for each trial per participant 1-48. You can calculate the PSD from the **read_filters_act_more.m** code. These SincLayer's weights and its corresponding files are located in the following two Google Drive links.
+To evaluate the SincLayer filter weights after training, we attached them for each 400 iteration (training loops) and for each trial per participant 1-48. You can calculate the PSD from the **read_filters_act_more.m** code. These SincLayer's weights and its corresponding files are located in the following two Google Drive links. These files are developed with an experiment developed with a size of sinclayer of 50.
 
  - [**https://drive.google.com/file/d/1oRFI0lGdqxDOMsLhNyO8bLSfVB8-U4E-/view?usp=sharing**](https://drive.google.com/file/d/1oRFI0lGdqxDOMsLhNyO8bLSfVB8-U4E-/view?usp=sharing)
  - [**https://drive.google.com/file/d/1Xn1xJuYDOJnlh5YrB8jSt05p9wsVfrAi/view?usp=sharing**](https://drive.google.com/file/d/1Xn1xJuYDOJnlh5YrB8jSt05p9wsVfrAi/view?usp=sharing)
