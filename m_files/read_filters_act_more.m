@@ -53,6 +53,7 @@ end;
 v = VideoWriter('Filters_video_responses.avi');
 v.FrameRate=16;
 open(v);
+%% Fs/2 is 500/2 for our particular case you can set it up in your particular case
 for i=1:399
     close all;
     plot(linspace(0,250,1000),10*log10(abs(data_happy(i,:))./max(abs(data_happy(i,:)))),'b','LineWidth',2);
