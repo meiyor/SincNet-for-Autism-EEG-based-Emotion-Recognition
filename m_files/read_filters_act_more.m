@@ -69,6 +69,7 @@ for i=1:399
     legend('Happy','Sad','Angry','Fear');
     ax=gcf;
     frame = getframe(ax);
+    %% resize depending on the size of your screen!
     frame.cdata=imresize(frame.cdata,[1250,1000]);
     writeVideo(v,frame);
 end;
