@@ -2,6 +2,13 @@
 
 This repository is inspired on the original implementation of [SincNet](https://github.com/mravanelli/SincNet). Here we modified and adapted the original SincNet code to evaluate the performance of a SincNet-based architecture for EEG-based emotion recognition. For this evaluation we utilized EEG data collected on the [Social Competence and Treatment Lab (SCTL)](https://www.lernerlab.com/) from StonyBrook University, NY, USA. The EEG data were collected from 40 individual diagnosed with Autism-Spectrum-Disorder (ASD) and 48 typically-developed (TD) or non-ASD participants. For any data request (e.g., behavioral, EEG) or analysis, pleased send an email to the corresponding contributors at juan.mayortorres@unitn.it, mirco.ravanelli@gmail.com, or matthew.lerner@stonybrook.edu and be patient during the request. The original SincNet paper describing the architecture and the corresponding test on speech and speaker recognition is here [Ravanelli & Bengio 2018](https://arxiv.org/abs/1812.05920).
 
+These is are the mandatory requirements for this code repository:
+
+- **Python >= 3.6**
+- **Pytorch >= 1.0**
+
+Look both packages are compatible before doing the installation and avoid unnecessary forced errors.
+
 If you want to use this pipeline and/or request the dataset associated to this repository please cite our paper [Mayor-Torres, J. M., Ravanelli, M., Medina-DeVilliers, S. E., Lerner, M. D., & Riccardi, G. (2021). Interpretable SincNet-based Deep Learning for Emotion Recognition from EEG brain activity. 2021 43rd Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)](https://ieeexplore.ieee.org/abstract/document/9630427)
 
 The proposed SincNet-based architecture for EEG-based emotion recognition is described on the following Figure:
