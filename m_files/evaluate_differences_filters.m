@@ -19,7 +19,7 @@ for i=3:length(D_ASD)
     close all;
     d_ASD=load([path_ASD '/' D_ASD(i).name])
     %% set the d_td for each subject in the folder that contains the folder of TD filters 
-    temp=mean([d_ASD.data_happy(:,pos1:pos2) ; d_ASD.data_sad(:,pos1:pos2) ; d_TD.data_angry(:,pos1:pos2) ; d_TD.data_fear(:,pos1:pos2)],1); 
+    temp=mean([d_ASD.data_happy(:,pos1:pos2) ; d_ASD.data_sad(:,pos1:pos2) ; d_ASD.data_angry(:,pos1:pos2) ; d_ASD.data_fear(:,pos1:pos2)],1); 
     d_asd(i)=mean(10*log10(abs(temp)./max(abs(temp))));
 end;
 %% now having all the filters averaged we can implement anova to compare the differences between the time you want to compare 
