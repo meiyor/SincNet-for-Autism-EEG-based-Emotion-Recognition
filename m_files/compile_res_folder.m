@@ -9,8 +9,6 @@ q=1;
 
 for p=1:48 %% running along trials
         [err_train{p},err_test{p},training_loss{p},test_loss{p},err_happy{p},err_sad{p},err_angry{p},err_fear{p},test_error{p}]=read_results_sincnet_no_plot([path '/res_time_av_test_data_sub_' pdfolder{end} '_{' num2str(p) '}_err_te.csv'],[path '/res_time_av_test_data_sub_' pdfolder{end} '_{' num2str(p) '}_train_epoch.csv']);
-        %[err_train{p},err_test{p},training_loss{p},test_loss{p},err_happy{p},err_sad{p},err_angry{p},err_fear{p},test_error{p}]=read_results_sincnet_no_plot([path '\res_time_av_test_data_sub_' pdfolder{end} '_{' num2str(p) '}_err_te.csv'],[path '\res_time_av_test_data_sub_' pdfolder{end} '_{' num2str(p) '}_train_epoch.csv']);
-        %[err_train{p},err_test{p},training_loss{p},test_loss{p},err_happy{p},err_sad{p},err_angry{p},err_fear{p},test_error{p}]=read_results_sincnet_no_plot([path '\res_time_channel_14_test_data_sub_' pdfolder{end} '_{' num2str(p) '}_err_te.csv'],[path '\res_time_channel_14_test_data_sub_' pdfolder{end} '_{' num2str(p) '}_train_epoch.csv']);
         if isfile([path '/res_error_' pdfolder{end} '_' num2str(p) '.csv'])
             index_n(q)=p;
             [data_res{p}]=read_error_location([path '/res_error_' pdfolder{end} '_' num2str(p) '.csv']);
