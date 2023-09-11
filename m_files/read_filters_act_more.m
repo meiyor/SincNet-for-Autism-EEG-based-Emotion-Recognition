@@ -41,7 +41,8 @@ if sel==1
         end;
         if k==48
             data_fear=squeeze(mean(data(37:n-1,:,:),1));
-            save('test_val_filters_response.mat','Mdata','data','data_happy','data_sad','data_angry','data_fear','-v7.3');
+            %% save the file where you consider this is ok for saving it
+            save(['test_val_filters_response_' subject_code '.mat'],'Mdata','data','data_happy','data_sad','data_angry','data_fear','-v7.3');
         end;
         k
     end;
