@@ -1,5 +1,6 @@
 function [p,tbl]=evaluate_differences_filters(path_TD,path_ASD,pos_freq,sel)
 %% pos_freq: is a 2D vector with the positions on the frequency response you want to analyze
+%% sel: selector for evaluate anova 1-way or anova n-way
 D_TD=dir(path_TD);
 D_ASD=dir(path_ASD);
 t=linspace(0,250,1000) %% the frequency response
