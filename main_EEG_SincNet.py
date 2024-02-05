@@ -16,6 +16,7 @@ from dnn_models_for_sinc import MLP
 from dnn_models_for_sinc import SincNet as CNN
 import numpy as np
 import sys
+import random
 from numpy import genfromtxt
 from torch.autograd import Variable
 import torch.optim as optim
@@ -24,6 +25,11 @@ import torch
 import os
 # set the number of available GPU nodes here
 os.environ["CUDA_VISIBLE_DEVICES"] = '0,1'
+
+# set the random seed as your convinience 
+torch.manual_seed(0)
+np.random.seed(0)
+random.seed(0)
 
 
 # size vector_numbacthes created from the data defined 
