@@ -5,7 +5,7 @@ This repository is inspired on the original implementation of [SincNet](https://
 These is are the mandatory requirements for this code repository:
 
 - **Python >= 3.6**
-- **Pytorch >= 1.0**
+- **Pytorch >= 1.14.1**
 
 Look both packages are compatible before doing the installation and avoid unnecessary forced errors.
 
